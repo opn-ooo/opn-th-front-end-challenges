@@ -7,9 +7,7 @@ This repository houses the front-end code challenges for Opn. These are small ha
 * We prefer well-thought-out solutions over the quick-and-dirty kind. So take
   your time, if you need it.
 * Average completion time so far has been around one to two weeks.
-* Submission is done via a
-  [git format-patch](https://git-scm.com/docs/git-format-patch). Send your patch
-  to the hiring team.
+* For a take-home assignment, Please submit your project repo via email to your contact person.
 
 ## What to expect
 
@@ -28,16 +26,19 @@ Rather than a complex solution, which added a million features and is written in
 
 ## What happens after your submission
 
-Once you have submitted your solution by sending us the **git-format-patch**, our Engineers will review the code. Due to the number of submissions we receive, and time-intensive review process, it might take us **1 week** to give you feedback on the submission. Based on the feedback, we will invite you for a meeting to talk more about your submission and continue the recruitment process.
+Our Engineers will review the code. Due to the number of submissions we receive, and time-intensive review process, it might take us **1 week** to give you feedback on the submission. Based on the feedback, we will invite you for a meeting to present more about your submission (a take-home assignment) and continue a technical interview.
 
 ## Challenges
 
-Pick the one that most suites the position you wish to apply.
+You have 2 choices:
 
-### Opn
+1. Take-home assignment replicate how software development actually happens. You can uses tools of your choosing, you get to do so in an environment you’re comfortable in and you get to do it on the schedule that works for them.
 
-* React & Vue [take-home assignment](https://github.com/opn-ooo/)
-* React [live-coding session](https://github.com/opn-ooo/)
+* **React & Vue** - [take-home assignment](https://github.com/opn-ooo/opn-th-front-end-challenges/tree/master/take-home)
+
+2. Live-coding session is a real-time face-to-face engagement with interviewers during which you may demonstrate your coding abilities using your preferred code editor. We have an incomplete project that we will let you finish on time (around 2 hours).
+
+* **React** - [live-coding session](https://github.com/opn-ooo/opn-th-front-end-challenges/tree/master/live-coding) **(under construction)**
 
 ### Have fun and we look forward to your submission
 

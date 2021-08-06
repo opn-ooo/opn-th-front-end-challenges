@@ -1,4 +1,4 @@
-# Frontend Take-home Assignment
+# Front-end Take-home Assignment
 
 ## Introduction
 
@@ -28,7 +28,12 @@ There should be a homepage that will display a grid (please use grid or flexbox)
   - Total amount should be the total number of selected Pokemon cards.
   - The cart should be able to clear all.
 
-These requirements might have some gaps. Please feel free to contact us if you have any questions.
+These requirements might have some gaps. Please feel free to contact us if you have any questions. As you might expect, parts of it are intentionally left ambiguous and open to leaving space for you to use your best judgment.
+
+## Notes
+
+- If you have time, please provide a brief one- or two-paragraph write-up containing details on how to run and build your application, if applicable.
+- Feel free to use any open-source packages you like; we're not seeking developers who are constantly reinventing the wheel, but rather developers who are familiar with web technologies and can leverage existing packages.
 
 ## Impress us
 
