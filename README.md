@@ -23,7 +23,7 @@ Rather than a complex solution, which added a million features and is written in
 * **Simplicity:** You can write gimmick-free and straightforward code with no
   ambiguities.
 * **Defensiveness:** You can cover edge cases and treat user inputs with care.
-* **Don't repeat yourself** You can reduce repetition of software patterns to avoid redundancy.
+* **Don't repeat yourself:** You can reduce repetition of software patterns to avoid redundancy.
 
 ## What happens after your submission
 
