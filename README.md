@@ -23,6 +23,7 @@ Rather than a complex solution, which added a million features and is written in
 * **Simplicity:** You can write gimmick-free and straightforward code with no
   ambiguities.
 * **Defensiveness:** You can cover edge cases and treat user inputs with care.
+* **Don't repeat yourself** You can reduce repetition of software patterns to avoid redundancy.
 
 ## What happens after your submission
 
@@ -38,7 +39,7 @@ You have 2 choices:
 
 2. Live-coding session is a real-time face-to-face engagement with interviewers during which you may demonstrate your coding abilities using your preferred code editor. We have an incomplete project that we will let you finish on time (around 2 hours).
 
-* **React** - [live-coding session](https://github.com/opn-ooo/opn-th-front-end-challenges/tree/master/live-coding) **(under construction)**
+* **React** - [live-coding session](https://github.com/opn-ooo/opn-th-front-end-challenges/tree/master/live-coding)
 
 ### Have fun and we look forward to your submission
 
