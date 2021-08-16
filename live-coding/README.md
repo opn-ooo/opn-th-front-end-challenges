@@ -51,10 +51,9 @@ $ yarn build
 
 ## Notes
 
-### Figma for UI Design:
+### UI Design:
 
-- Easy: https://figma.fun/3oegaU
-- Full: https://figma.fun/tnuL7b
+- Figma: https://figma.fun/tnuL7b
 
 ### Services
 
