@@ -15,8 +15,8 @@ It's your responsibility as a front-end developer to make their idea into realit
 There should be a homepage that will display a grid (please use grid or flexbox) of Pokemon cards, including their image. It would help if you implemented the design follow this link. [https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market](https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market). We've also provided a file as an alternative. It's in the same directory.
 
 - The API for getting these cards can be found at <https://pokemontcg.io>
-  - Limit the number of cards on the page to 20.
-  - The card's price must be shown from `tcgplayer.prices.normal.market`.
+  - Limit the number of cards on the page to `20`.
+  - The card's price must be shown. Use data from `cardmarket.prices.*` or `cardmarket.prices.averageSellPrice`.
   - The card's quantity must be shown from `set.total`.
   - The page should be able to display cards with pagination, **search by name** and filter by
     - Type
