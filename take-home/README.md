@@ -6,13 +6,13 @@ To put your web development skills to the test, create a web app that displays P
 
 ## Scenario
 
-Once upon a time, a fateful moment had happened. A business person found the news [11 rare Pokémon cards that could make you rich](https://www.redbull.com/in-en/rarest-pokemon-cards-in-the-world). It sparked his idea. He had the bright notion of creating the Pokemon card trade platform. He thought he could use a third-party service to serve data but no design, so he enlisted the help of a designer. Both of them finished their design, but there is no web application. From here, you have been temporarily hired by Opn and assigned to this team. These guys approached you and gave you the whole story.
+Once upon a time, a fateful moment had happened. A business person found the news [11 rare Pokemon cards that could make you rich](https://www.redbull.com/in-en/rarest-pokemon-cards-in-the-world). It sparked his idea. He had the bright notion of creating the Pokemon card trade platform. He thought he could use a third-party service to serve data but no design, so he enlisted the help of a designer. Both of them finished their design, but there is no web application. From here, you have been temporarily hired by Opn and assigned to this team. These guys approached you and gave you the whole story.
 
 It's your responsibility as a front-end developer to make their idea into reality. You will need to grab on the requirements and build the project from scratch while ensuring the application to have great engineering and well-design.
 
 ## Requirements
 
-There should be a homepage that will display a grid (please use grid or flexbox) of Pokemon cards, including their image. It would help if you implemented the design follow this link. [https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market](https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market). Alternatively, we have attched a `design.fig` file, you can found it inside this folder.
+There should be a homepage that will display a grid (please use grid or flexbox) of Pokemon cards, including their image. It would help if you implemented the design follow this link. [https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market](https://www.figma.com/file/OvbAJ7yvTzB3Yk8oIwSycd/Pokemon-Card-Market). We've also provided a file as an alternative. It's in the same directory.
 
 - The API for getting these cards can be found at <https://pokemontcg.io>
   - Limit the number of cards on the page to 20.
@@ -45,7 +45,5 @@ If you want to impress us, there are some tasks below. **The tasks are not requi
 - Commenting your code
 - Supporting responsive both desktop and mobile
 - Writing unit tests
-
-If you notice more bugs in the original implementation you can add fixes for those as well. You won't be penalized if you don't. However we ask you not to add more features than the one given in the requirements.
 
 Let's rock! 🤘
