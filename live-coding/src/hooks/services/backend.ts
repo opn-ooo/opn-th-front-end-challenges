@@ -24,6 +24,11 @@ export type TypePaymentState = defaultState & {
     data: any
 }
 
+export type TypeProductListResponse = {
+    products: TypeProductListData[]
+    requestId: string
+}
+
 export type TypePaymentRequest = {
     paymentInfo: {
         email: string
@@ -66,10 +71,12 @@ export const getProductList = () => {
             })
                 .then(successResolver)
                 // Success
-                .then((data = defaultState.data) => {
+                .then((data: TypeProductListResponse) => {
+                    const { products = defaultState.data } = data
+
                     setState((old: any) => ({
                         ...old,
-                        data,
+                        data: products,
                     }))
                 })
                 // Error
