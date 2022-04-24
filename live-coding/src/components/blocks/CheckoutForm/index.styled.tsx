@@ -85,6 +85,23 @@ export const Input = styled.input`
     }
 `
 
+export const InputCardNumber = styled.input`
+    ${normalTransitions()}
+    ${resetInput()}
+
+    color: var(--input_value);
+    font-size: 0.875em;
+    padding: 9px 12px;
+
+    width: 100%;
+
+    background-color: #fff;
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+`
+
 export const ErrorMessage = styled.div`
     color: var(--error);
     font-weight: 500;
