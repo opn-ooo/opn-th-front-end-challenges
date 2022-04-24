@@ -92,6 +92,24 @@ export const ErrorMessage = styled.div`
     margin-top: 5px;
 `
 
+export const BoxCard = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 8px;
+`
+
+export const BoxCVV = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 0px 8px 8px 0px;
+`
+
+export const BoxCardExpire = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 8px 0px 0px 8px;
+`
+
 export const Actions = styled.article`
     display: flex;
     justify-content: center;
