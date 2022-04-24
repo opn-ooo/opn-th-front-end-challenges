@@ -28,6 +28,11 @@ import {
     FieldsMerge,
 } from "./index.styled"
 
+// Svg Icons
+import { ReactComponent as IconVisa } from "@components/svgs/visa.svg"
+import { ReactComponent as IconMastercard } from "@components/svgs/mastercard.svg"
+import { ReactComponent as CardIcon } from "@components/svgs/cardIcon.svg"
+
 type TypeCheckoutFormDefaultValues = {
     email: string | null
     card_number: string | null
