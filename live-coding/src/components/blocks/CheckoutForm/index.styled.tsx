@@ -97,4 +97,15 @@ export const Actions = styled.article`
     justify-content: center;
 `
 
+export const Button = styled.button`
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875em;
+    background-color: #343A4C;
+    color: white;
+`
+
 export const Fields = styled.article.attrs(() => ({ className: "fields" }))``
