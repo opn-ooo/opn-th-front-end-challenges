@@ -10,8 +10,12 @@ import useValidator from "react-joi"
 import Joi from "joi"
 import {
     validateCardNumber,
+    parseCardType,
+    parseCardExpiry,
+    validateCardExpiry,
     formatCardNumber,
     formatCardExpiry,
+    validateCardCVC
 } from "creditcardutils"
 
 // Styled Elements
@@ -23,9 +27,14 @@ import {
     FieldControl,
     FieldLabel,
     Input,
+    InputCardNumber,
     Form,
     FieldGroups,
     FieldsMerge,
+    BoxCard,
+    BoxCVV,
+    BoxCardExpire,
+    Button
 } from "./index.styled"
 
 // Svg Icons
@@ -91,17 +100,46 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                 .messages({
                     "string.empty": "Required",
                     "string.cardNumber": "Must be a valid card",
+                    "string.wrong": "wrong card number",
                     "any.required": "Required",
                 }),
-            card_expire: Joi.string().required().messages({
-                "string.empty": "Required",
-                "any.required": "Required",
-            }),
-            cvv: Joi.string().length(3).required().messages({
-                "string.empty": "Required",
-                "string.length": "Maximum 3 digits",
-                "any.required": "Required",
-            }),
+            card_expire: Joi.string()
+                .custom((value, helpers) => {
+                    if (value) {
+                        if (!validateCardExpiry(parseCardExpiry(value).month, parseCardExpiry(value).year)) {
+                            return helpers.error("string.wrong")
+                        }
+                    }
+
+                    return value
+                })
+                .required()
+                .messages({
+                    "string.wrong": "wrong card expire",
+                    "string.empty": "Required",
+                    "any.required": "Required",
+                }),
+            cvv: Joi.string()
+                .custom((value, helpers) => {
+                    if (value) {
+                        if(value.length <= 3) {
+                            if (!validateCardCVC(value)) {
+                                return helpers.error("string.wrong")
+                            }
+                        } else {
+                            return helpers.error("string.length")
+                        }
+                    }
+
+                    return value
+                })
+                .required()
+                .messages({
+                    "string.empty": "Required",
+                    "string.length": "Maximum 3 digits",
+                    "any.required": "Required",
+                    "string.wrong": "wrong cvv"
+                }),
         }),
     })
 
@@ -166,15 +204,16 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                             <FieldLabel error={!!getErrors("card_number")}>
                                 Card information
                             </FieldLabel>
-
-                            <Input
-                                {...register.input({
-                                    name: "card_number",
-                                    onChange: formatter.cardNumber,
-                                })}
-                                type="text"
-                                placeholder="1234 1234 1234 1234"
-                            />
+                            <BoxCard>
+                                <InputCardNumber
+                                    {...register.input({
+                                        name: "card_number",
+                                        onChange: formatter.cardNumber,
+                                    })}
+                                    type="text"
+                                    placeholder="1234 1234 1234 1234"
+                                />
+                            </BoxCard>
                         </FieldControl>
 
                         {getErrors("card_number") && (
@@ -186,14 +225,16 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
 
                     <FieldsMerge>
                         <Fields>
-                            <Input
-                                {...register.input({
-                                    name: "card_expire",
-                                    onChange: formatter.cardExpire,
-                                })}
-                                type="text"
-                                placeholder="MM / YY"
-                            />
+                            <BoxCardExpire>
+                                <InputCardNumber
+                                    {...register.input({
+                                        name: "card_expire",
+                                        onChange: formatter.cardExpire,
+                                    })}
+                                    type="text"
+                                    placeholder="MM / YY"
+                                />
+                            </BoxCardExpire>
 
                             {getErrors("card_expire") && (
                                 <ErrorMessage>
@@ -203,11 +244,14 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                         </Fields>
 
                         <Fields>
-                            <Input
-                                {...register.input({ name: "cvv" })}
-                                type="text"
-                                placeholder="123"
-                            />
+                            <BoxCVV>
+                                <InputCardNumber
+                                    {...register.input({ name: "cvv" })}
+                                    type="text"
+                                    placeholder="123"
+                                />
+                                <CardIcon style={{ width: 32, marginRight: 8, height: 32 }} />
+                            </BoxCVV>
 
                             {getErrors("cvv") && (
                                 <ErrorMessage>{getErrors("cvv")}</ErrorMessage>
