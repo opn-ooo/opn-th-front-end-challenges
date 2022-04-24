@@ -4,6 +4,7 @@ import React, {
     useEffect,
     SyntheticEvent,
     ChangeEvent,
+    useState,
 } from "react"
 import useModels from "react-use-models"
 import useValidator from "react-joi"
@@ -73,6 +74,10 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
         useModels<TypeCheckoutFormDefaultValues>({
             defaultState,
         })
+
+    const [showOnlyVisa, setShowOnlyVisa] = useState(false)
+    const [showOnlyMasterCard, setShowOnlyMasterCard] = useState(false)
+
     const { state, setData } = useValidator({
         initialData: defaultState,
         schema: Joi.object({
@@ -161,6 +166,21 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
     const formatter = {
         cardNumber: (e: ChangeEvent<HTMLInputElement>) => {
             const value = formatCardNumber(e.target.value)
+            const cardType = parseCardType(e.target.value)
+            switch (cardType) {
+                case 'visa':
+                    setShowOnlyMasterCard(false)
+                    setShowOnlyVisa(true)
+                    break
+                case 'mastercard':
+                    setShowOnlyVisa(false)
+                    setShowOnlyMasterCard(true)
+                    break
+                default:
+                    setShowOnlyVisa(false)
+                    setShowOnlyMasterCard(false)
+                    break
+            }
 
             updateModel("card_number", value)
         },
@@ -213,6 +233,14 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                                     type="text"
                                     placeholder="1234 1234 1234 1234"
                                 />
+                                {
+                                    showOnlyVisa ? <IconVisa style={{ width: 32, marginRight: 8 }} /> :
+                                        showOnlyMasterCard ? <IconMastercard style={{ width: 32, marginRight: 8 }} /> :
+                                            <>
+                                                <IconVisa style={{ width: 32, marginRight: 8, height: 32 }} />
+                                                <IconMastercard style={{ width: 32, marginRight: 8, height: 32 }} />
+                                            </>
+                                }
                             </BoxCard>
                         </FieldControl>
 
