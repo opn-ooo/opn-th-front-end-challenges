@@ -148,6 +148,10 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
         }),
     })
 
+    const styles = {
+        color: '#5E687A'
+    }
+
     const getErrors = useCallback(
         (field) => {
             return state.$errors[field]
@@ -204,7 +208,6 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                         <FieldLabel error={!!getErrors("email")}>
                             Email
                         </FieldLabel>
-
                         <Input
                             {...register.input({ name: "email" })}
                             type="email"
@@ -289,9 +292,9 @@ const CheckoutForm: FC<CheckoutFormProps> = ({
                 </FieldGroups>
 
                 <Actions>
-                    <button disabled={state.$auto_invalid || loading}>
+                    <Button style={state.$auto_invalid || loading ? styles : {}} disabled={state.$auto_invalid || loading} onClick={() => onSuccess(models)}>
                         {submitText}
-                    </button>
+                    </Button>
                 </Actions>
             </Form>
         </Container>
