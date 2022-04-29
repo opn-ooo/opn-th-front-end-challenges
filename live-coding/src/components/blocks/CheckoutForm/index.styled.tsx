@@ -85,6 +85,23 @@ export const Input = styled.input`
     }
 `
 
+export const InputCardNumber = styled.input`
+    ${normalTransitions()}
+    ${resetInput()}
+
+    color: var(--input_value);
+    font-size: 0.875em;
+    padding: 9px 12px;
+
+    width: 100%;
+
+    background-color: #fff;
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+`
+
 export const ErrorMessage = styled.div`
     color: var(--error);
     font-weight: 500;
@@ -92,9 +109,38 @@ export const ErrorMessage = styled.div`
     margin-top: 5px;
 `
 
+export const BoxCard = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 8px;
+`
+
+export const BoxCVV = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 0px 8px 8px 0px;
+`
+
+export const BoxCardExpire = styled.div`
+    display: flex;
+    outline: 1px solid var(--input_border);
+    border-radius: 8px 0px 0px 8px;
+`
+
 export const Actions = styled.article`
     display: flex;
     justify-content: center;
+`
+
+export const Button = styled.button`
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875em;
+    background-color: #343A4C;
+    color: white;
 `
 
 export const Fields = styled.article.attrs(() => ({ className: "fields" }))``
