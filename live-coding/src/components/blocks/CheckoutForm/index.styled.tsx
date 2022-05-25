@@ -65,6 +65,10 @@ export const FieldLabel = styled.span`
     }}
 `
 
+export const FieldInputWrapper = styled.div`
+    position: relative;
+`
+
 export const Input = styled.input`
     ${normalTransitions()}
     ${resetInput()}
@@ -95,6 +99,20 @@ export const ErrorMessage = styled.div`
 export const Actions = styled.article`
     display: flex;
     justify-content: center;
+`
+
+export const ActionButton = styled.button`
+    ${resetButton()}
+    background-color: var(--dorminant_2);
+    font-size: 14px;
+    color: var(--label);
+    font-weight: 500;
+    padding: 12px 32px;
+    border-radius: 4px;
+
+    :hover {
+        color: white;
+    }
 `
 
 export const Fields = styled.article.attrs(() => ({ className: "fields" }))``

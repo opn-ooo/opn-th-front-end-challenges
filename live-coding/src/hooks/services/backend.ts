@@ -29,19 +29,30 @@ export type TypeProductListResponse = {
     requestId: string
 }
 
-export type TypePaymentRequest = {
-    paymentInfo: {
-        email: string
-        cardInfo: {
-            cardNo: string
-            cardExpiryDate: string
-            cardCVV: string
-        }
+export type TypePaymentInfo = {
+    email: string
+    cardInfo: {
+        cardNo: string
+        cardExpiryDate: string
+        cardCVV: string
     }
+}
+
+export type TypePaymentRequest = {
+    paymentInfo: TypePaymentInfo
     products: {
         id: string
         quantity: number
     }[]
+}
+
+export type TypePaymentResponse = {
+    requestId: string
+    result: {
+        errorCode: string
+        errorDesc: string
+    }
+    paymentInfo: TypePaymentInfo
 }
 
 export const getProductList = () => {
@@ -115,7 +126,8 @@ export const postPayment = () => {
         error: null,
     }
 
-    const { state, setState } = useApiBackend<TypePaymentState>(defaultState)
+    const { state, setState, Request, successResolver, isCancel } =
+        useApiBackend<TypePaymentState>(defaultState)
 
     const post = useCallback(
         async (payload: TypePaymentRequest) => {
@@ -128,7 +140,33 @@ export const postPayment = () => {
 
             // Api request
             // TODO: Bind endpoint request
-            await wait(3000)
+            const Api = Request({
+                method: "post",
+                url: `/pay`,
+                params: payload,
+            })
+                .then(successResolver)
+                // Success
+                .then((data: TypePaymentResponse) => {
+                    const { result = defaultState.data } = data
+                    setState((old: any) => ({
+                        ...old,
+                        data: result,
+                    }))
+                })
+                // Error
+                .catch((err) => {
+                    // Return cancelled error immediately
+                    if (isCancel(err)) return err
+
+                    setState((old: any) => ({
+                        ...old,
+                        error: err?.response?.data?.message || err.message,
+                    }))
+                })
+
+            // Do not proceed when request is cancelled
+            if (isCancel(await Api)) return
 
             // After Request state
             setState((old: any) => ({
