@@ -1192,9 +1192,9 @@ resolve@^1.20.0:
     path-parse "^1.0.6"
 
 rollup@^2.38.5:
-  version "2.53.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.53.0.tgz#5b6bc7820a03f361d2ae3dcabdc99d269a754709"
-  integrity sha512-spgrY78Toh+m0+zaOoeaayJKuzFuWy6o1PdFIBMVwRcuxT0xCOX9A5rChyKe+2ruL4lePKWUMImS4mMW1QAkmQ==
+  version "2.80.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.80.0.tgz#a82efc15b748e986a7c76f0f771221b1fa108a2c"
+  integrity sha512-cIFJOD1DESzpjOBl763Kp1AH7UE/0fcdHe6rZXUdQ9c50uvgigvW97u3IcSeBwOkgqL/PXPBktBCh0KEu5L8XQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
